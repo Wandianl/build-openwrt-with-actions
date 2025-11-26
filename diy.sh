@@ -15,3 +15,5 @@ echo 'src-git fullcone https://github.com/fullcone-nat-nftables/nft-fullcone.git
 echo 'src-git UA3F https://github.com/SunBK201/UA3F.git' >>feeds.conf.default
 git clone https://github.com/stevenjoezhang/luci-app-adguardhome.git package/ADGH
 git clone https://github.com/jerrykuku/luci-theme-argon.git
+echo 'src-git immortalwrt_packages https://github.com/immortalwrt/packages.git;openwrt-24.10' >> feeds.conf.default
+echo 'src-git immortalwrt_luci https://github.com/immortalwrt/luci.git;openwrt-24.10' >> feeds.conf.default
