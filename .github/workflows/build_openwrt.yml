@@ -108,7 +108,9 @@ jobs:
       - name: 添加 TurboACC 加速 (Add TurboACC acceleration)
         working-directory: openWRT
         run: |
-          curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/main/turboacc -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
+          curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/main/turboacc -o add_turboacc.sh && \
+          chmod +x add_turboacc.sh && \
+          ./add_turboacc.sh --no-sfe
 
       - name: 运行 diy.sh (Run diy.sh)
         working-directory: openWRT
