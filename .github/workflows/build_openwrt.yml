@@ -1,4 +1,4 @@
-name: 🚀 编译 openwrt(Build openwrt)
+name: 🚀🚀🚀 编译 openwrt(Build openwrt)
 
 on:
   workflow_dispatch:
@@ -34,7 +34,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: 🚀 编译 (Build)
+    name: 🚀🚀🚀 编译 (Build)
     steps:
       - name: Before freeing up disk space
         run: |
@@ -147,6 +147,13 @@ jobs:
         if: ${{inputs.multithreading == false}}
         working-directory: openWRT
         run: make -j1 V=s
+
+      # 新增步骤：编译成功后覆盖旧的.config文件
+      - name: 覆盖旧的.config文件 (Override old .config file)
+        if: success()
+        run: |
+          cp -f openWRT/.config .config
+          echo "✅ 编译成功，已覆盖旧的.config文件"
 
       - name: 上传编译结果到 Artifact (Upload build result to Artifact)
         uses: actions/upload-artifact@v4
