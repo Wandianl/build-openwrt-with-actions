@@ -544,6 +544,8 @@ CONFIG_FEED_packages=y
 CONFIG_FEED_luci=y
 CONFIG_FEED_routing=y
 CONFIG_FEED_telephony=y
+# CONFIG_FEED_fullcone is not set
+CONFIG_FEED_UA3F=y
 CONFIG_FEED_immortalwrt_packages=y
 CONFIG_FEED_immortalwrt_luci=y
 
@@ -1785,7 +1787,8 @@ CONFIG_ZABBIX_POSTGRESQL=y
 # CONFIG_PACKAGE_fluent-bit is not set
 # CONFIG_PACKAGE_gkrellmd is not set
 # CONFIG_PACKAGE_gotop is not set
-# CONFIG_PACKAGE_htop is not set
+CONFIG_PACKAGE_htop=y
+CONFIG_HTOP_LMSENSORS=y
 # CONFIG_PACKAGE_ipmitool is not set
 # CONFIG_PACKAGE_monit is not set
 # CONFIG_PACKAGE_monit-nossl is not set
@@ -1868,7 +1871,6 @@ CONFIG_PACKAGE_trusted-firmware-a-mt7988-ram-comb=y
 #
 # Extra packages
 #
-CONFIG_PACKAGE_autocore=y
 # CONFIG_PACKAGE_jose is not set
 CONFIG_PACKAGE_libiwinfo-data=y
 # CONFIG_PACKAGE_libjose is not set
@@ -3933,21 +3935,7 @@ CONFIG_PACKAGE_liblzma=y
 # CONFIG_PACKAGE_libodbcinst is not set
 # CONFIG_PACKAGE_libpq is not set
 # CONFIG_PACKAGE_libpqxx is not set
-CONFIG_PACKAGE_libsqlite3=y
-
-#
-# Configuration
-#
-# CONFIG_SQLITE3_BATCH_ATOMIC_WRITE is not set
-CONFIG_SQLITE3_COLUMN_METADATA=y
-CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y
-CONFIG_SQLITE3_FTS3=y
-CONFIG_SQLITE3_FTS4=y
-CONFIG_SQLITE3_FTS5=y
-CONFIG_SQLITE3_RTREE=y
-# CONFIG_SQLITE3_SESSION is not set
-# end of Configuration
-
+# CONFIG_PACKAGE_libsqlite3 is not set
 # CONFIG_PACKAGE_pgsqlodbc is not set
 # CONFIG_PACKAGE_psqlodbca is not set
 # CONFIG_PACKAGE_psqlodbcw is not set
@@ -4462,21 +4450,21 @@ CONFIG_PACKAGE_libsysfs=y
 # Qt6
 #
 # CONFIG_PACKAGE_libQt6Concurrent is not set
-CONFIG_PACKAGE_libQt6Core=y
+# CONFIG_PACKAGE_libQt6Core is not set
 # CONFIG_PACKAGE_libQt6DBus is not set
 # CONFIG_PACKAGE_libQt6Gui is not set
-CONFIG_PACKAGE_libQt6Network=y
+# CONFIG_PACKAGE_libQt6Network is not set
 # CONFIG_PACKAGE_libQt6PrintSupport is not set
-CONFIG_PACKAGE_libQt6Sql=y
+# CONFIG_PACKAGE_libQt6Sql is not set
 # CONFIG_PACKAGE_libQt6Test is not set
 # CONFIG_PACKAGE_libQt6Widgets is not set
-CONFIG_PACKAGE_libQt6Xml=y
+# CONFIG_PACKAGE_libQt6Xml is not set
 # CONFIG_PACKAGE_qt6-plugin-libqcertonlybackend is not set
 # CONFIG_PACKAGE_qt6-plugin-libqminimal is not set
 # CONFIG_PACKAGE_qt6-plugin-libqnetworkmanager is not set
 # CONFIG_PACKAGE_qt6-plugin-libqoffscreen is not set
-CONFIG_PACKAGE_qt6-plugin-libqopensslbackend=y
-CONFIG_PACKAGE_qt6-plugin-libqsqlite=y
+# CONFIG_PACKAGE_qt6-plugin-libqopensslbackend is not set
+# CONFIG_PACKAGE_qt6-plugin-libqsqlite is not set
 # CONFIG_PACKAGE_qt6-plugin-libqtuiotouchplugin is not set
 # CONFIG_PACKAGE_qt6-plugin-libqxdgdesktopportal is not set
 # end of Qt6
@@ -4772,7 +4760,7 @@ CONFIG_PACKAGE_libcap=y
 CONFIG_PACKAGE_libcap-ng=y
 # CONFIG_PACKAGE_libcap-ng-bin is not set
 # CONFIG_PACKAGE_libcares is not set
-CONFIG_PACKAGE_libcbor=y
+# CONFIG_PACKAGE_libcbor is not set
 # CONFIG_PACKAGE_libcgroup is not set
 # CONFIG_PACKAGE_libcharset is not set
 # CONFIG_PACKAGE_libcli is not set
@@ -4840,7 +4828,7 @@ CONFIG_PACKAGE_libdbus=y
 # CONFIG_PACKAGE_libdht is not set
 # CONFIG_PACKAGE_libdmapsharing is not set
 # CONFIG_PACKAGE_libdnet is not set
-CONFIG_PACKAGE_libdouble-conversion=y
+# CONFIG_PACKAGE_libdouble-conversion is not set
 # CONFIG_PACKAGE_libdrm is not set
 # CONFIG_PACKAGE_libdw is not set
 CONFIG_PACKAGE_libe2p=y
@@ -4849,8 +4837,8 @@ CONFIG_PACKAGE_libe2p=y
 # CONFIG_PACKAGE_libelf is not set
 # CONFIG_PACKAGE_libesmtp is not set
 # CONFIG_PACKAGE_libestr is not set
-# CONFIG_PACKAGE_libev is not set
-CONFIG_PACKAGE_libevdev=y
+CONFIG_PACKAGE_libev=y
+# CONFIG_PACKAGE_libevdev is not set
 # CONFIG_PACKAGE_libevent2 is not set
 # CONFIG_PACKAGE_libevent2-core is not set
 # CONFIG_PACKAGE_libevent2-extra is not set
@@ -4872,7 +4860,7 @@ CONFIG_PACKAGE_libext2fs=y
 # CONFIG_PACKAGE_libffmpeg-custom is not set
 # CONFIG_PACKAGE_libffmpeg-full is not set
 # CONFIG_PACKAGE_libffmpeg-mini is not set
-CONFIG_PACKAGE_libfido2=y
+# CONFIG_PACKAGE_libfido2 is not set
 # CONFIG_PACKAGE_libflac is not set
 # CONFIG_PACKAGE_libfmt is not set
 # CONFIG_PACKAGE_libfreetype is not set
@@ -5033,7 +5021,7 @@ CONFIG_PACKAGE_libpcre2-16=y
 # CONFIG_PACKAGE_libpng is not set
 CONFIG_PACKAGE_libpopt=y
 # CONFIG_PACKAGE_libpri is not set
-# CONFIG_PACKAGE_libprotobuf-c is not set
+CONFIG_PACKAGE_libprotobuf-c=y
 # CONFIG_PACKAGE_libpsl is not set
 # CONFIG_PACKAGE_libqmi is not set
 # CONFIG_PACKAGE_libqrencode is not set
@@ -5042,7 +5030,7 @@ CONFIG_PACKAGE_libpopt=y
 # CONFIG_PACKAGE_libradcli is not set
 # CONFIG_PACKAGE_libradiotap is not set
 CONFIG_PACKAGE_libreadline=y
-# CONFIG_PACKAGE_libredblack is not set
+CONFIG_PACKAGE_libredblack=y
 # CONFIG_PACKAGE_librhash is not set
 # CONFIG_PACKAGE_librouteros is not set
 # CONFIG_PACKAGE_libroxml is not set
@@ -5082,14 +5070,14 @@ CONFIG_PACKAGE_libss=y
 # CONFIG_PACKAGE_libstoken is not set
 # CONFIG_PACKAGE_libstrophe is not set
 # CONFIG_PACKAGE_libsyn123 is not set
-# CONFIG_PACKAGE_libsysrepo is not set
+CONFIG_PACKAGE_libsysrepo=y
 # CONFIG_PACKAGE_libtalloc is not set
 CONFIG_PACKAGE_libtasn1=y
 # CONFIG_PACKAGE_libtheora is not set
 # CONFIG_PACKAGE_libtiff is not set
 # CONFIG_PACKAGE_libtins is not set
 CONFIG_PACKAGE_libtirpc=y
-CONFIG_PACKAGE_libtorrent-rasterbar=y
+# CONFIG_PACKAGE_libtorrent-rasterbar is not set
 # CONFIG_PACKAGE_libtraceevent is not set
 # CONFIG_PACKAGE_libtraceevent-extra is not set
 # CONFIG_PACKAGE_libtracefs is not set
@@ -5104,7 +5092,7 @@ CONFIG_PACKAGE_libuclient=y
 CONFIG_PACKAGE_libucode=y
 # CONFIG_PACKAGE_libucontext is not set
 CONFIG_PACKAGE_libudebug=y
-CONFIG_PACKAGE_libudev-zero=y
+# CONFIG_PACKAGE_libudev-zero is not set
 # CONFIG_PACKAGE_libudns is not set
 # CONFIG_PACKAGE_libuecc is not set
 # CONFIG_PACKAGE_libugpio is not set
@@ -5141,7 +5129,7 @@ CONFIG_PACKAGE_libuuid=y
 # CONFIG_PACKAGE_libxslt is not set
 # CONFIG_PACKAGE_libxxhash is not set
 # CONFIG_PACKAGE_libyaml-cpp is not set
-# CONFIG_PACKAGE_libyang is not set
+CONFIG_PACKAGE_libyang=y
 # CONFIG_PACKAGE_libyubikey is not set
 # CONFIG_PACKAGE_libzmq-curve is not set
 # CONFIG_PACKAGE_libzmq-nc is not set
@@ -5415,7 +5403,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set
 # CONFIG_PACKAGE_luci-app-privoxy is not set
 # CONFIG_PACKAGE_luci-app-ps3netsrv is not set
-CONFIG_PACKAGE_luci-app-qbittorrent=y
+# CONFIG_PACKAGE_luci-app-qbittorrent is not set
 # CONFIG_PACKAGE_luci-app-qos is not set
 # CONFIG_PACKAGE_luci-app-radicale is not set
 # CONFIG_PACKAGE_luci-app-radicale2 is not set
@@ -5682,7 +5670,6 @@ CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-package-manager-yua is not set
 CONFIG_PACKAGE_luci-i18n-package-manager-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-package-manager-zh-tw is not set
-CONFIG_PACKAGE_luci-i18n-qbittorrent-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-samba4-ar is not set
 # CONFIG_PACKAGE_luci-i18n-samba4-bg is not set
 # CONFIG_PACKAGE_luci-i18n-samba4-bn is not set
@@ -5847,7 +5834,7 @@ CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y
 #
 # CONFIG_PACKAGE_mktorrent is not set
 # CONFIG_PACKAGE_opentracker is not set
-CONFIG_PACKAGE_qbittorrent-enhanced-edition=y
+# CONFIG_PACKAGE_qbittorrent-enhanced-edition is not set
 # CONFIG_PACKAGE_rtorrent is not set
 # CONFIG_PACKAGE_rtorrent-rpc is not set
 # CONFIG_PACKAGE_transmission-cli is not set
@@ -5920,7 +5907,6 @@ CONFIG_PACKAGE_curl=y
 # CONFIG_PACKAGE_ps3netsrv is not set
 # CONFIG_PACKAGE_rclone is not set
 # CONFIG_PACKAGE_rclone-config is not set
-# CONFIG_PACKAGE_rrsync is not set
 # CONFIG_PACKAGE_rsync is not set
 # CONFIG_PACKAGE_rsyncd is not set
 # CONFIG_PACKAGE_transfer is not set
@@ -6321,16 +6307,15 @@ CONFIG_PACKAGE_wsdd2=y
 # CONFIG_PACKAGE_mosh-client is not set
 # CONFIG_PACKAGE_mosh-full is not set
 # CONFIG_PACKAGE_mosh-server is not set
-CONFIG_PACKAGE_openssh-client=y
+# CONFIG_PACKAGE_openssh-client is not set
 # CONFIG_PACKAGE_openssh-client-utils is not set
-CONFIG_PACKAGE_openssh-keygen=y
+# CONFIG_PACKAGE_openssh-keygen is not set
 # CONFIG_PACKAGE_openssh-moduli is not set
-CONFIG_PACKAGE_openssh-server=y
-CONFIG_OPENSSH_LIBFIDO2=y
+# CONFIG_PACKAGE_openssh-server is not set
 # CONFIG_PACKAGE_openssh-server-pam is not set
 # CONFIG_PACKAGE_openssh-sftp-avahi-service is not set
-CONFIG_PACKAGE_openssh-sftp-client=y
-CONFIG_PACKAGE_openssh-sftp-server=y
+# CONFIG_PACKAGE_openssh-sftp-client is not set
+# CONFIG_PACKAGE_openssh-sftp-server is not set
 # CONFIG_PACKAGE_sshtunnel is not set
 # CONFIG_PACKAGE_tmate is not set
 # end of SSH
@@ -6592,6 +6577,7 @@ CONFIG_PACKAGE_cgi-io=y
 # CONFIG_PACKAGE_trojan-plus is not set
 # CONFIG_PACKAGE_tuic-client is not set
 # CONFIG_PACKAGE_tuic-server is not set
+# CONFIG_PACKAGE_ua3f is not set
 CONFIG_PACKAGE_uhttpd=y
 # CONFIG_PACKAGE_uhttpd-mod-lua is not set
 CONFIG_PACKAGE_uhttpd-mod-ubus=y
@@ -6814,7 +6800,7 @@ CONFIG_PACKAGE_iw=y
 # CONFIG_PACKAGE_knxd is not set
 # CONFIG_PACKAGE_kplex is not set
 # CONFIG_PACKAGE_krb5-client is not set
-CONFIG_PACKAGE_krb5-libs=y
+# CONFIG_PACKAGE_krb5-libs is not set
 # CONFIG_PACKAGE_krb5-server is not set
 # CONFIG_PACKAGE_krb5-server-extras is not set
 # CONFIG_PACKAGE_libipset is not set
@@ -7871,7 +7857,7 @@ CONFIG_STRACE_NONE=y
 # CONFIG_PACKAGE_supervisor is not set
 # CONFIG_PACKAGE_swanmon is not set
 # CONFIG_PACKAGE_syncthing is not set
-# CONFIG_PACKAGE_sysrepo is not set
+CONFIG_PACKAGE_sysrepo=y
 # CONFIG_PACKAGE_sysrepocfg is not set
 # CONFIG_PACKAGE_sysrepoctl is not set
 CONFIG_PACKAGE_sysstat=y
