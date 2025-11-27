@@ -149,22 +149,28 @@ jobs:
         run: make -j1 V=s
 
 
-      - name: 上传编译结果到 Artifact (Upload build result to Artifact)
+      - name: 上传编译产物
         uses: actions/upload-artifact@v4
         with:
-          name: openWRT-build-result
+          name: OpenWRT-Build-Artifacts
           path: openWRT/bin/targets
+          retention-days: 7
 
-      - name: 上传 .config 文件到仓库主页 (Upload .config to repository)
+      - name: 提交配置文件到仓库
         run: |
-          # 设置 Git 配置
+          # 备份现有的 .config 文件（如果存在）
+          if [ -f ".config" ]; then
+            backup_name=".config.backup.$(date +%Y%m%d%H%M%S)"
+            cp .config "$backup_name"
+            git add "$backup_name"
+            echo "已备份旧配置文件: $backup_name"
+          fi
+          
+          # 用编译后的配置文件替换现有的 .config
+          cp -f openWRT/.config ./.config
+          
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          # 复制 .config 文件到固定位置
-          cp openWRT/.config latest.config
-          
-          # 添加、提交并推送文件
-          git add latest.config
-          git commit -m "📁 更新最新的编译配置文件 [Automated]"
+          git config --local user.name "action-user"
+          git add .config
+          git commit -m "更新编译配置文件 [Automated Backup & Replace]" -a
           git push
