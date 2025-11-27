@@ -154,3 +154,17 @@ jobs:
         with:
           name: openWRT-build-result
           path: openWRT/bin/targets
+
+      - name: 上传 .config 文件到仓库主页 (Upload .config to repository)
+        run: |
+          # 设置 Git 配置
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # 复制 .config 文件到固定位置
+          cp openWRT/.config latest.config
+          
+          # 添加、提交并推送文件
+          git add latest.config
+          git commit -m "📁 更新最新的编译配置文件 [Automated]"
+          git push
