@@ -115,6 +115,30 @@ jobs:
         run: |
           chmod +x diy.sh
           ./diy.sh
+          
+      - name: 克隆 ImmortalWrt 仓库以获取 CPU 使用率补丁 (Clone ImmortalWrt repo for CPU usage patch)
+        working-directory: openWRT
+        run: |
+          # 在当前工作目录（openWRT）的上一级克隆 ImmortalWrt，避免干扰
+          cd ..
+          git clone https://github.com/immortalwrt/immortalwrt.git
+          cd openWRT
+
+      - name: 添加 autocore 软件包 (Add autocore package)
+        working-directory: openWRT
+        run: |
+          # 创建目录并复制 autocore 包
+          mkdir -p package/immortal
+          cp -r ../immortalwrt/package/emortal/autocore/ package/immortal/
+
+      - name: 覆盖 Luci 文件以启用 CPU 使用率显示 (Overwrite Luci files to enable CPU usage display)
+        working-directory: openWRT
+        run: |
+          # 覆盖三个关键文件
+          cp -f ../immortalwrt/feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci
+          cp -f ../immortalwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+          cp -f ../immortalwrt/feeds/luci/modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json feeds/luci/modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json
+          echo "✅ Luci CPU usage patch applied successfully."
 
       - name: 更新并下载 feeds (Update and download feeds)
         working-directory: openWRT
