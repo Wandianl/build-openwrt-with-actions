@@ -22,7 +22,6 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git
 echo 'src-git packages https://github.com/immortalwrt/packages.git;openwrt-24.10' >> feeds.conf.default
 echo 'src-git luci https://github.com/immortalwrt/luci.git;openwrt-24.10' >> feeds.conf.default
 echo 'src-git routing https://github.com/immortalwrt/routing.git;openwrt-24.10' >> feeds.conf.default
-echo 'src-git telephony https://github.com/immortalwrt/telephony.git;openwrt-24.10' >> feeds.conf.default
 echo 'src-git immortalwrt_packages https://github.com/immortalwrt/packages.git;openwrt-24.10' >> feeds.conf.default
 
 
